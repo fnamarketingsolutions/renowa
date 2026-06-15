@@ -7,21 +7,44 @@ const CompanySection = () => {
     { label: '所在地', value: '〒101-0047 東京都千代田区内神田1-15-2 神田オーシャンビル' },
     { label: '主な対応エリア', value: '大阪を中心とした京都府・奈良県・兵庫県\n(その他、ご要望に応じて全国各地対応可)' },
     { label: 'TEL', value: '03-5555-4881' },
-    { 
-      label: '所属資格', 
-      value: '第二種電気工事士\n給水装置工事主任技術者\nガス機器設置スペシャリスト\n小型車両系建設機械（整地・運搬・積込み用及び掘削用）運転特別教育' 
+    {
+      label: '所属資格',
+      value: '第二種電気工事士\n給水装置工事主任技術者\nガス機器設置スペシャリスト\n小型車両系建設機械（整地・運搬・積込み用及び掘削用）運転特別教育'
     },
   ];
 
   return (
-    <div className="w-full bg-[#fcfcfc] font-sans antialiased">
+    <div id="company" className="w-full bg-[#fcfcfc] font-sans antialiased">
       {/* Hero Header Area */}
-      <div 
+      <div
         className="w-full h-64 sm:h-80 bg-cover bg-center relative flex flex-col items-center justify-center"
         style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')` }}
       >
-        <h2 className="text-3xl font-light tracking-widest text-[#7fbba2] bg-white/40 px-6 py-2 rounded-md backdrop-blur-xs">COMPANY</h2>
-        <p className="text-xs sm:text-sm tracking-wider text-gray-600 mt-1">会社概要</p>
+        <h2 className="w-full max-w-5xl mx-auto mt-4">
+          <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
+            <defs>
+              <linearGradient id="companyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#22a4dd" />
+                <stop offset="50%" stopColor="#4ade80" />
+                <stop offset="100%" stopColor="#A3E635" />
+              </linearGradient>
+            </defs>
+
+            <text
+              x="50%"
+              y="65%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#ffffff"
+              stroke="url(#companyGradient)"
+              strokeWidth="1.2"
+              className="text-[90px]"
+            >
+              COMPANY
+            </text>
+          </svg>
+        </h2>
+        <p className="text-lg sm:text-sm lg:text-xl tracking-wider text-gray-600 mb-6">会社概要</p>
       </div>
 
       {/* Profile Card Container (Overlaps the image block above) */}

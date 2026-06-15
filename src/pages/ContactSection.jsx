@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function ContactSection() {
   return (
-    <section className="w-full bg-[#f6fcfb] py-16 px-4 flex justify-center items-center font-sans antialiased">
+    <section id="contact" className="w-full bg-[#f6fcfb] py-16 px-4 flex justify-center items-center font-sans antialiased">
       <div className="w-full max-w-4xl relative">
         
         {/* House Clip-Path Outline Graphic Layer */}
@@ -19,10 +19,31 @@ export default function ContactSection() {
               clipPath: 'polygon(50% 0%, 100% 28%, 100% 100%, 0% 100%, 0% 28%)'
             }}
           >
-            <h2 className="text-4xl sm:text-5xl font-light tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-amber-300">
-              CONTACT
-            </h2>
-            <p className="text-xs sm:text-sm text-gray-400 tracking-widest mt-2">お問い合わせ</p>
+         <h2 className="w-full max-w-5xl mx-auto mt-4">
+          <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
+            <defs>
+              <linearGradient id="companyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#22a4dd" />
+                <stop offset="50%" stopColor="#4ade80" />
+                <stop offset="100%" stopColor="#A3E635" />
+              </linearGradient>
+            </defs>
+
+            <text
+              x="50%"
+              y="65%"
+              textAnchor="middle"
+              dominantBaseline="middle"
+              fill="#ffffff"
+              stroke="url(#companyGradient)"
+              strokeWidth="1.2"
+              className="text-[90px]"
+            >
+              COMPANY
+            </text>
+          </svg>
+        </h2>
+            <p className="text-xs sm:text-sm text-gray-40 0 tracking-widest mt-2">お問い合わせ</p>
 
             <p className="text-xs sm:text-sm text-gray-500 tracking-wide mt-8 mb-10 max-w-md leading-relaxed">
               ご依頼・ご相談はこちらからお気軽にお問い合わせください。

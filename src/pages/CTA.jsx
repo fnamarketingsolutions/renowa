@@ -2,7 +2,7 @@ import React from 'react';
 
 const CTA = () => {
   return (
-    <section className="w-full bg-[#f4f7f6] py-16 px-4 flex justify-center items-center font-sans antialiased">
+    <section id="contact" className="w-full bg-[#f4f7f6] py-16 px-4 flex justify-center items-center font-sans antialiased">
       <div className="w-full max-w-4xl relative">
         
         {/* House-shaped Gradient Border Outer Layer */}

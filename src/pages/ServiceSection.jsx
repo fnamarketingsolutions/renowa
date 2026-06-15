@@ -26,12 +26,35 @@ export default function ServiceVoiceWorks() {
   ];
 
   return (
-    <div className="w-full bg-[#fcfcfc] text-[#333333] font-sans antialiased">
+    <div id="service" className="w-full bg-[#fcfcfc] text-[#333333] font-sans antialiased">
       
       {/* ================= SERVICE SECTION ================= */}
       <section className="max-w-5xl mx-auto px-4 py-16 text-center">
-        <h2 className="text-3xl font-light tracking-widest text-[#a8d3cc]">SERVICE</h2>
-        <p className="text-sm tracking-wider text-gray-500 mt-1 mb-12">サービス例</p>
+      <h2 className="w-full max-w-5xl mx-auto mt-4">
+  <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
+    <defs>
+      <linearGradient id="serviceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#22a4dd" />
+        <stop offset="50%" stopColor="#4ade80" />
+        <stop offset="100%" stopColor="#A3E635" />
+      </linearGradient>
+    </defs>
+    
+    <text
+      x="50%"
+      y="65%"
+      textAnchor="middle"
+      dominantBaseline="middle"
+      fill="none"
+      stroke="url(#serviceGradient)"
+      strokeWidth="1.2"
+      className="text-[90px]"
+    >
+      SERVICE
+    </text>
+  </svg>
+</h2> 
+      <p className="text-sm tracking-wider text-gray-500 mt-1 mb-12">サービス例</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-10 max-w-4xl mx-auto">
           {services.map((item) => (
@@ -54,8 +77,30 @@ export default function ServiceVoiceWorks() {
       {/* ================= VOICE SECTION ================= */}
       <section className="w-full bg-[#e8f3f5] py-16 px-4">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-light tracking-widest text-[#a8d3cc]">VOICE</h2>
-          <p className="text-sm tracking-wider text-gray-500 mt-1 mb-10">お客様の声</p>
+        <h2 className="w-full max-w-5xl mx-auto mt-4">
+  <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
+    <defs>
+      <linearGradient id="voiceGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#22a4dd" />
+        <stop offset="50%" stopColor="#4ade80" />
+        <stop offset="100%" stopColor="#A3E635" />
+      </linearGradient>
+    </defs>
+    
+    <text
+      x="50%"
+      y="65%"
+      textAnchor="middle"
+      dominantBaseline="middle"
+      fill="none"
+      stroke="url(#voiceGradient)"
+      strokeWidth="1.2"
+      className="text-[90px]"
+    >
+      VOICE
+    </text>
+  </svg>
+</h2>          <p className="text-sm tracking-wider text-gray-500 mt-1 mb-10">お客様の声</p>
 
           <div className="bg-white rounded-2xl p-6 md:p-10 shadow-sm flex flex-col md:flex-row gap-8 items-center text-left max-w-3xl mx-auto">
             <div className="w-48 sm:w-56 shrink-0 text-center">
@@ -88,9 +133,31 @@ export default function ServiceVoiceWorks() {
       </section>
 
       {/* ================= WORKS SECTION ================= */}
-      <section className="max-w-4xl mx-auto px-4 py-16 text-center">
-        <h2 className="text-3xl font-light tracking-widest text-[#a8d3cc]">WORKS</h2>
-        <p className="text-sm tracking-wider text-gray-500 mt-1 mb-12">施工実績</p>
+      <section id="works" className="max-w-4xl mx-auto px-4 py-16 text-center">
+      <h2 className="w-full max-w-5xl mx-auto mt-4">
+  <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
+    <defs>
+      <linearGradient id="worksGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+        <stop offset="0%" stopColor="#22a4dd" />
+        <stop offset="50%" stopColor="#4ade80" />
+        <stop offset="100%" stopColor="#A3E635" />
+      </linearGradient>
+    </defs>
+    
+    <text
+      x="50%"
+      y="65%"
+      textAnchor="middle"
+      dominantBaseline="middle"
+      fill="none"
+      stroke="url(#worksGradient)"
+      strokeWidth="1.2"
+      className="text-[90px]"
+    >
+      WORKS
+    </text>
+  </svg>
+</h2>        <p className="text-sm tracking-wider text-gray-500 mt-1 mb-12">施工実績</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12 max-w-3xl mx-auto">
           {works.map((item) => (

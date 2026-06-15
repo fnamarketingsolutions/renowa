@@ -1,20 +1,37 @@
 import React from 'react';
 
 const ManagerMessage = () => {
-  // Inline SVG background setup containing the wavy green/blue lines layout
-  const backgroundWavyLines = `data:image/svg+xml,${encodeURIComponent(`
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" preserveAspectRatio="none">
-      <path d="M -100,700 C 300,600 400,950 1100,500" fill="none" stroke="%2394d2bd" stroke-width="1.5" opacity="0.6"/>
-      <path d="M -100,720 C 280,630 420,930 1100,520" fill="none" stroke="%230a9396" stroke-width="1" opacity="0.4"/>
-    </svg>
-  `)}`;
-
   return (
-    <section 
-      className="w-full bg-white text-[#333333] font-sans antialiased py-16 px-4 bg-no-repeat bg-cover"
-      style={{ backgroundImage: `url('${backgroundWavyLines}')`, backgroundPosition: 'center bottom' }}
-    >
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 lg:gap-16">
+    <section id="manager-message" className="w-full bg-[#fcfcfc] text-[#333333] font-sans antialiased py-20 px-4 relative overflow-hidden select-none">
+      
+      {/* ================= DECORATIVE BACKGROUND MORE WAVY & LIGHT LINES ================= */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
+        <svg 
+          className="w-full h-full min-w-[1200px]" 
+          viewBox="0 0 1440 900" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          {/* Top Deep Blue-Teal Line - Made highly curved/wavy and lighter */}
+          <path
+            d="M1520,-40 C1250,150 900,150 700,550 C500,950 250,700 -80,910"
+            stroke="#005f73"
+            strokeWidth="1.5"
+            opacity="0.22"
+          />
+          {/* Bottom Forest Green-Teal Line - Made highly curved/wavy and lighter */}
+          <path
+            d="M1520,-10 C1260,180 910,180 710,570 C510,970 260,720 -80,940"
+            stroke="#0f4c5c"
+            strokeWidth="1.8"
+            opacity="0.18"
+          />
+        </svg>
+      </div>
+
+      {/* ================= CORE CONTENT LAYOUT MATRIX CONTAINER ================= */}
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 lg:gap-16 relative z-10">
         
         {/* Left Side Portrait Block */}
         <div className="w-full sm:w-80 md:w-[400px] shrink-0 aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden shadow-sm bg-gray-100">

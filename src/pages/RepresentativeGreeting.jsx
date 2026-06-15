@@ -2,7 +2,7 @@ import React from 'react';
 
 const RepresentativeGreeting = () => {
   return (
-    <section className="w-full bg-[#fcfcfc] text-[#333333] font-sans antialiased py-12 px-0 relative overflow-hidden select-none">
+    <section id="voice" className="w-full bg-[#fcfcfc] text-[#333333] font-sans antialiased py-12 px-0 relative overflow-hidden select-none">
       {/* Outer container remains wide to hold the absolute side layout items */}
       <div className="w-full mx-auto relative min-h-[700px] flex flex-col items-center">
         
