@@ -1,4 +1,5 @@
 import React from 'react';
+import companyImage from "../assets/homePage/company-image.jpg";
 
 const CompanySection = () => {
   const details = [
@@ -15,40 +16,51 @@ const CompanySection = () => {
 
   return (
     <div id="company" className="w-full bg-[#fcfcfc] font-sans antialiased">
-      {/* Hero Header Area */}
-      <div
-        className="w-full h-64 sm:h-80 bg-cover bg-center relative flex flex-col items-center justify-center"
-        style={{ backgroundImage: `linear-gradient(rgba(255,255,255,0.4), rgba(255,255,255,0.4)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1200&q=80')` }}
-      >
-        <h2 className="w-full max-w-5xl mx-auto mt-4">
-          <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
-            <defs>
-              <linearGradient id="companyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#22a4dd" />
-                <stop offset="50%" stopColor="#4ade80" />
-                <stop offset="100%" stopColor="#A3E635" />
-              </linearGradient>
-            </defs>
+      
+      {/* Hero Header Area with Native Image Tag Layer */}
+      <div className="w-full h-64 sm:h-80 relative flex flex-col items-center justify-center overflow-hidden">
+        {/* Native Image Tag with Blend Overlay */}
+        <img 
+          src={companyImage} 
+          alt="Company Profile Office Background" 
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none select-none"
+        />
+        {/* Semi-transparent white screen layer matching your inline gradient overlay */}
+        <div className="absolute inset-00 z-10" />
 
-            <text
-              x="50%"
-              y="65%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#ffffff"
-              stroke="url(#companyGradient)"
-              strokeWidth="1.2"
-              className="text-[90px]"
-            >
-              COMPANY
-            </text>
-          </svg>
-        </h2>
-        <p className="text-lg sm:text-sm lg:text-xl tracking-wider text-gray-600 mb-6">会社概要</p>
+        {/* Content Elements on Top of Image Overlay */}
+        <div className="relative z-20 w-full text-center">
+          {/* Enhanced Bold Company Header Graphic with Thin Outline */}
+          <h2 className="w-full max-w-6xl mx-auto mt-4">
+            <svg viewBox="0 0 1100 140" className="w-full h-auto font-sans font-black tracking-[0.24em]">
+              <defs>
+                <linearGradient id="companyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                  <stop offset="0%" stopColor="#22a4dd" />
+                  <stop offset="50%" stopColor="#4ade80" />
+                  <stop offset="100%" stopColor="#A3E635" />
+                </linearGradient>
+              </defs>
+
+              <text
+                x="50%"
+                y="62%"
+                textAnchor="middle"
+                dominantBaseline="middle"
+                fill="#ffffff"
+                stroke="url(#companyGradient)"
+                strokeWidth="1.1"
+                className="text-[105px]"
+              >
+                COMPANY
+              </text>
+            </svg>
+          </h2>
+          <p className="text-sm tracking-wider text-gray-600 mb-6 font-medium">会社概要</p>
+        </div>
       </div>
 
       {/* Profile Card Container (Overlaps the image block above) */}
-      <div className="max-w-4xl mx-auto px-4 pb-16 -mt-12 sm:-mt-20 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 pb-16 -mt-12 sm:-mt-20 relative z-30">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-10 lg:p-14">
           <div className="divide-y divide-gray-100">
             {details.map((item, index) => (
@@ -64,6 +76,7 @@ const CompanySection = () => {
           </div>
         </div>
       </div>
+
     </div>
   );
 };

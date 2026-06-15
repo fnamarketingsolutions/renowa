@@ -1,42 +1,53 @@
 import React from 'react';
+import managerImage from "../assets/homePage/manager-image.jpg"
 
 const ManagerMessage = () => {
   return (
-    <section id="manager-message" className="w-full bg-[#fcfcfc] text-[#333333] font-sans antialiased py-20 px-4 relative overflow-hidden select-none">
+    <section id="manager-message" className="w-full text-[#333333] font-sans antialiased py-20 px-4 relative overflow-hidden select-none">
       
       {/* ================= DECORATIVE BACKGROUND MORE WAVY & LIGHT LINES ================= */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden">
-        <svg 
-          className="w-full h-full min-w-[1200px]" 
-          viewBox="0 0 1440 900" 
-          fill="none" 
-          xmlns="http://www.w3.org/2000/svg"
-          preserveAspectRatio="none"
-        >
-          {/* Top Deep Blue-Teal Line - Made highly curved/wavy and lighter */}
-          <path
-            d="M1520,-40 C1250,150 900,150 700,550 C500,950 250,700 -80,910"
-            stroke="#005f73"
-            strokeWidth="1.5"
-            opacity="0.22"
-          />
-          {/* Bottom Forest Green-Teal Line - Made highly curved/wavy and lighter */}
-          <path
-            d="M1520,-10 C1260,180 910,180 710,570 C510,970 260,720 -80,940"
-            stroke="#0f4c5c"
-            strokeWidth="1.8"
-            opacity="0.18"
-          />
-        </svg>
-      </div>
+      {/* Changed to make sure it tracks perfectly from absolute top to bottom on mobile */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+  <svg 
+    className="w-full h-full" 
+    viewBox="0 0 1440 900" 
+    fill="none" 
+    xmlns="http://www.w3.org/2000/svg"
+    preserveAspectRatio="none"
+  >
+    <defs>
+      {/* Sky Blue to Light Green Gradient Definition */}
+      <linearGradient id="wavyLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stopColor="#22a4dd" />
+        <stop offset="100%" stopColor="#4ade80" />
+      </linearGradient>
+    </defs>
+
+    {/* Top Wavy Line - Now using the Sky Blue to Light Green Gradient */}
+    <path
+      d="M1520,-40 C1250,150 900,150 700,550 C500,950 250,700 -80,910"
+      stroke="url(#wavyLineGradient)"
+      strokeWidth="2.5"
+      opacity="0.3"
+    />
+    
+    {/* Bottom Wavy Line - Now using the Sky Blue to Light Green Gradient */}
+    <path
+      d="M1520,-10 C1260,180 910,180 710,570 C510,970 260,720 -80,940"
+      stroke="url(#wavyLineGradient)"
+      strokeWidth="2.8"
+      opacity="0.25"
+    />
+  </svg>
+</div>
 
       {/* ================= CORE CONTENT LAYOUT MATRIX CONTAINER ================= */}
       <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 lg:gap-16 relative z-10">
         
         {/* Left Side Portrait Block */}
-        <div className="w-full sm:w-80 md:w-[400px] shrink-0 aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden shadow-sm bg-gray-100">
+        <div className="w-full sm:w-80 md:w-[400px] shrink-0 aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden shadow-sm">
           <img 
-            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=600&q=80" 
+            src={managerImage} 
             alt="Construction Management Specialist Portrait" 
             className="w-full h-full object-cover object-center"
           />
@@ -62,7 +73,7 @@ const ManagerMessage = () => {
           </p>
 
           <p>
-            工事が完了したときの「ありがとう」の言葉は、私たちにとって何よりの励みです。そして、「また仕事を任せたいと思える会社だった」と感じていただけるよう、施工後のアフターフォローまで責任を持って対応いたします。
+            工事完了したときの「ありがとう」の言葉は、私たちにとって何よりの励みです。そして、「また仕事を任せたいと思える会社だった」と感じていただけるよう、施工後のアフターフォローまで責任を持って対応いたします。
           </p>
           
           <p className="font-medium text-gray-700 pt-2">
