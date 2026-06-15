@@ -5,45 +5,47 @@ export default function ContactSection() {
     <section id="contact" className="w-full bg-[#f6fcfb] py-16 px-4 flex justify-center items-center font-sans antialiased">
       <div className="w-full max-w-4xl relative">
         
-        {/* House Clip-Path Outline Graphic Layer */}
+        {/* House Outline Layer with Inward Curved Left and Right Edges */}
         <div 
           className="w-full bg-gradient-to-br from-cyan-200 via-emerald-100 to-amber-200 p-[2px]"
           style={{
-            clipPath: 'polygon(50% 0%, 100% 28%, 100% 100%, 0% 100%, 0% 28%)'
+            clipPath: 'polygon(50% 0%, 100% 28%, 93% 65%, 100% 100%, 0% 100%, 7% 65%, 0% 28%)'
           }}
         >
-          {/* Inner Content Sheet */}
+          {/* Inner Content Sheet following the exact same Inward Curved Clip-Path */}
           <div 
             className="w-full bg-white px-6 pt-24 pb-16 sm:px-12 sm:pt-32 sm:pb-20 text-center flex flex-col items-center"
             style={{
-              clipPath: 'polygon(50% 0%, 100% 28%, 100% 100%, 0% 100%, 0% 28%)'
+              clipPath: 'polygon(50% 0%, 100% 28%, 93% 65%, 100% 100%, 0% 100%, 7% 65%, 0% 28%)'
             }}
           >
-         <h2 className="w-full max-w-5xl mx-auto mt-4">
-          <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
-            <defs>
-              <linearGradient id="companyGradient" x1="0%" y1="0%" x2="100%" y2="0%">
-                <stop offset="0%" stopColor="#22a4dd" />
-                <stop offset="50%" stopColor="#4ade80" />
-                <stop offset="100%" stopColor="#A3E635" />
-              </linearGradient>
-            </defs>
+            {/* Bold CONTACT Layout with thin gradient border outline and white inner fill */}
+            <h2 className="w-full max-w-6xl mx-auto mt-4">
+              <svg viewBox="0 0 1100 140" className="w-full h-auto font-sans font-black tracking-[0.24em]">
+                <defs>
+                  <linearGradient id="contactGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stopColor="#22a4dd" />
+                    <stop offset="50%" stopColor="#4ade80" />
+                    <stop offset="100%" stopColor="#A3E635" />
+                  </linearGradient>
+                </defs>
+                
+                <text
+                  x="50%"
+                  y="62%"
+                  textAnchor="middle"
+                  dominantBaseline="middle"
+                  fill="#ffffff"
+                  stroke="url(#contactGradient)"
+                  strokeWidth="1.1"
+                  className="text-[105px]"
+                >
+                  CONTACT
+                </text>
+              </svg>
+            </h2>
 
-            <text
-              x="50%"
-              y="65%"
-              textAnchor="middle"
-              dominantBaseline="middle"
-              fill="#ffffff"
-              stroke="url(#companyGradient)"
-              strokeWidth="1.2"
-              className="text-[90px]"
-            >
-              COMPANY
-            </text>
-          </svg>
-        </h2>
-            <p className="text-xs sm:text-sm text-gray-40 0 tracking-widest mt-2">お問い合わせ</p>
+            <p className="text-xs sm:text-sm text-gray-400 tracking-widest mt-2">お問い合わせ</p>
 
             <p className="text-xs sm:text-sm text-gray-500 tracking-wide mt-8 mb-10 max-w-md leading-relaxed">
               ご依頼・ご相談はこちらからお気軽にお問い合わせください。
@@ -55,7 +57,7 @@ export default function ContactSection() {
               {/* Email Gateway */}
               <a 
                 href="mailto:info@example.com"
-                className="w-full sm:w-64 h-14 rounded-md bg-[#50b5e3] hover:bg-[#43a1cb] transition-colors flex items-center justify-center gap-3 text-white shadow-sm"
+                className="w-full sm:w-64 h-14 rounded-md bg-[#50b5e3] hover:bg-[#43a1cb] transition-colors flex items-center justify-center gap-3 text-white shadow-sm cursor-pointer"
               >
                 <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
@@ -66,7 +68,7 @@ export default function ContactSection() {
               {/* Telephone Gateway */}
               <a 
                 href="tel:0355554881"
-                className="w-full sm:w-64 h-14 rounded-md border border-gray-300 bg-white hover:bg-gray-50 transition-colors flex items-center justify-center gap-3 text-gray-600 shadow-sm"
+                className="w-full sm:w-64 h-14 rounded-md border border-gray-300 bg-white hover:bg-gray-50 transition-colors flex items-center justify-center gap-3 text-gray-600 shadow-sm cursor-pointer"
               >
                 <svg className="w-5 h-5 fill-current text-gray-400" viewBox="0 0 24 24">
                   <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
