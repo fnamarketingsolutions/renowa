@@ -22,9 +22,42 @@ const AboutUs = () => {
   };
 
   return (
-    /* MAIN WRAPPER: Spans full edge-to-edge layout width and natural viewport height boundaries with your custom glass backdrop style */
-    <div className='w-full min-h-screen flex items-center justify-center bg-white/50 backdrop-blur-[2px] py-12 md:py-0'>
+    /* MAIN WRAPPER: Spans full edge-to-edge layout width. Background color and blur apply ONLY on mobile viewports */
+    <div className='w-full min-h-screen flex items-center justify-center max-sm:bg-white/50 max-sm:backdrop-blur-[2px] py-12 md:py-0 relative overflow-hidden'>
       
+      {/* DECORATIVE LINING BACKGROUND LAYER - GENUINE EDGE-TO-EDGE WINDOW COVERAGE */}
+      <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
+        {/* Adjusted viewBox and setting preserveAspectRatio to none guarantees the curves stretch diagonally across the entire window */}
+        <svg 
+          className="w-full h-full" 
+          viewBox="0 0 100 100" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          {/* Top Blue Wave Line - Flowing top-left down to bottom-right */}
+          <motion.path
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 0.35 }}
+            transition={{ duration: 1.5, ease: "easeInOut" }}
+            d="M 0,10 C 30,15 40,45 65,55 C 85,63 90,80 100,90"
+            stroke="#22a4dd"
+            strokeWidth="0.4"
+            strokeLinecap="round"
+          />
+          {/* Bottom Lime-Green Wave Line - Flowing parallel top-left down to bottom-right */}
+          <motion.path
+            initial={{ pathLength: 0, opacity: 0 }}
+            animate={{ pathLength: 1, opacity: 0.35 }}
+            transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
+            d="M 0,13 C 28,19 38,48 64,59 C 84,67 89,83 100,93"
+            stroke="#A3E635"
+            strokeWidth="0.4"
+            strokeLinecap="round"
+          />
+        </svg>
+      </div>
+
       {/* INNER STRUCTURE: Preserves its exact responsive width matrix bounds while centered perfectly within the parent */}
       <motion.section
         id="about us"
@@ -33,39 +66,6 @@ const AboutUs = () => {
         transition={{ duration: 0.6 }}
         className="w-full max-w-[92%] lg:max-w-[80%] mx-auto py-12 sm:py-16 md:py-24 relative z-10 select-none rounded-[32px]"
       >
-        {/* DECORATIVE LINING BACKGROUND LAYER - EXTENDED & FULLY OPTIMIZED FOR MOBILE VIEWPORTS */}
-        <div className="absolute inset-0 w-full h-full pointer-events-none z-0 overflow-hidden rounded-[32px]">
-          {/* Adjusted viewBox and setting preserveAspectRatio to none guarantees the curves stretch diagonally across all viewports */}
-          <svg 
-            className="w-full h-full" 
-            viewBox="0 0 100 100" 
-            fill="none" 
-            xmlns="http://www.w3.org/2000/svg"
-            preserveAspectRatio="none"
-          >
-            {/* Top Blue Wave Line - Flowing top-left down to bottom-right */}
-            <motion.path
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.35 }}
-              transition={{ duration: 1.5, ease: "easeInOut" }}
-              d="M 0,10 C 30,15 40,45 65,55 C 85,63 90,80 100,90"
-              stroke="#22a4dd"
-              strokeWidth="0.4"
-              strokeLinecap="round"
-            />
-            {/* Bottom Lime-Green Wave Line - Flowing parallel top-left down to bottom-right */}
-            <motion.path
-              initial={{ pathLength: 0, opacity: 0 }}
-              animate={{ pathLength: 1, opacity: 0.35 }}
-              transition={{ duration: 1.5, ease: "easeInOut", delay: 0.2 }}
-              d="M 0,13 C 28,19 38,48 64,59 C 84,67 89,83 100,93"
-              stroke="#A3E635"
-              strokeWidth="0.4"
-              strokeLinecap="round"
-            />
-          </svg>
-        </div>
-
         {/* CORE CONTENT LAYOUT MATRIX CONTAINER */}
         <motion.div
           layout
@@ -195,4 +195,4 @@ const AboutUs = () => {
   );
 };
 
-export default AboutUs; 
+export default AboutUs;
