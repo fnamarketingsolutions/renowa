@@ -36,8 +36,8 @@ export default function Footer() {
           </span>
         </div>
 
-        {/* Navigation Grid System */}
-        <nav className="flex flex-wrap justify-center items-center gap-x-2 gap-y-4 sm:gap-x-0">
+        {/* Navigation Grid System: Updated to 'hidden sm:flex' to disappear entirely on mobile viewports */}
+        <nav className="hidden sm:flex flex-wrap justify-center items-center gap-x-2 gap-y-4 sm:gap-x-0">
           {navLinks.map((link, idx) => (
             <React.Fragment key={idx}>
               <button 

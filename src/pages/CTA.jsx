@@ -3,10 +3,11 @@ import React from 'react';
 export default function CTA() {
   return (
     <section id="contact" className="w-full bg-[#f6fcfb] py-20 px-4 flex justify-center items-center font-sans antialiased">
-      <div className="w-full max-w-4xl relative aspect-[4/5] sm:aspect-auto">
+      
+      {/* ================= CONTAINER MATRIX: Max-width expanded to match 80% on desktop layout matrices ================= */}
+      <div className="w-full max-w-[92%] lg:max-w-[80%] relative h-auto">
         
         {/* ================= REUSABLE VECTOR MASK DEFINITION ================= */}
-        {/* Using SVG vector paths allows us to draw smooth, fluid curves instead of rigid polygons */}
         <svg className="absolute w-0 h-0" width="0" height="0">
           <defs>
             <clipPath id="smoothHouseMask" clipPathUnits="objectBoundingBox">
@@ -27,13 +28,13 @@ export default function CTA() {
           className="w-full bg-gradient-to-br from-cyan-200 via-emerald-100 to-amber-200 p-[2px]"
           style={{ clipPath: 'url(#smoothHouseMask)' }}
         >
-          {/* ================= INNER CONTENT PANEL ================= */}
+          {/* ================= INNER CONTENT PANEL: Height optimized via streamlined vertical padding adjustments ================= */}
           <div 
-            className="w-full bg-white px-6 pt-28 pb-16 sm:px-12 sm:pt-36 sm:pb-24 text-center flex flex-col items-center"
+            className="w-full bg-white px-6 pt-16 pb-12 sm:px-12 sm:pt-24 sm:pb-16 text-center flex flex-col items-center"
             style={{ clipPath: 'url(#smoothHouseMask)' }}
           >
             {/* Bold CONTACT Text with thin gradient border outline and white inner fill */}
-            <h2 className="w-full max-w-6xl mx-auto mt-4">
+            <h2 className="w-full max-w-5xl mx-auto mt-2">
               <svg viewBox="0 0 1100 140" className="w-full h-auto font-sans font-black tracking-[0.24em]">
                 <defs>
                   <linearGradient id="contactGradient" x1="0%" y1="0%" x2="100%" y2="0%">
@@ -58,9 +59,9 @@ export default function CTA() {
               </svg>
             </h2>
 
-            <p className="text-xs sm:text-sm text-gray-400 tracking-widest mt-2">お問い合わせ</p>
+            <p className="renowa-font text-xl font-bold tracking-widest mt-1">お問い合わせ</p>
 
-            <p className="text-xs sm:text-sm text-gray-500 tracking-wide mt-10 mb-10 max-w-md leading-relaxed">
+            <p className="text-xs sm:text-sm text-gray-500 tracking-wide mt-6 mb-8 max-w-md leading-relaxed">
               ご依頼・ご相談はこちらからお気軽にお問い合わせください。
             </p>
 

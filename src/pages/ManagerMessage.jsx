@@ -6,46 +6,54 @@ const ManagerMessage = () => {
     <section id="manager-message" className="w-full text-[#333333] font-sans antialiased py-20 px-4 relative overflow-hidden select-none">
       
       {/* ================= DECORATIVE BACKGROUND MORE WAVY & LIGHT LINES ================= */}
-      {/* Changed to make sure it tracks perfectly from absolute top to bottom on mobile */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">
-  <svg 
-    className="w-full h-full" 
-    viewBox="0 0 1440 900" 
-    fill="none" 
-    xmlns="http://www.w3.org/2000/svg"
-    preserveAspectRatio="none"
-  >
-    <defs>
-      {/* Sky Blue to Light Green Gradient Definition */}
-      <linearGradient id="wavyLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" stopColor="#22a4dd" />
-        <stop offset="100%" stopColor="#4ade80" />
-      </linearGradient>
-    </defs>
+        <svg 
+          className="w-full h-full" 
+          viewBox="0 0 1440 900" 
+          fill="none" 
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+        >
+          <defs>
+            {/* Sky Blue to Light Green Gradient Definition */}
+            <linearGradient id="wavyLineGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#22a4dd" />
+              <stop offset="100%" stopColor="#4ade80" />
+            </linearGradient>
+          </defs>
 
-    {/* Top Wavy Line - Now using the Sky Blue to Light Green Gradient */}
-    <path
-      d="M1520,-40 C1250,150 900,150 700,550 C500,950 250,700 -80,910"
-      stroke="url(#wavyLineGradient)"
-      strokeWidth="2.5"
-      opacity="0.3"
-    />
-    
-    {/* Bottom Wavy Line - Now using the Sky Blue to Light Green Gradient */}
-    <path
-      d="M1520,-10 C1260,180 910,180 710,570 C510,970 260,720 -80,940"
-      stroke="url(#wavyLineGradient)"
-      strokeWidth="2.8"
-      opacity="0.25"
-    />
-  </svg>
-</div>
+          {/* Top Wavy Line */}
+          <path
+            d="M1520,-40 C1250,150 900,150 700,550 C500,950 250,700 -80,910"
+            stroke="url(#wavyLineGradient)"
+            strokeWidth="2.5"
+            opacity="0.3"
+          />
+          
+          {/* Bottom Wavy Line */}
+          <path
+            d="M1520,-10 C1260,180 910,180 710,570 C510,970 260,720 -80,940"
+            stroke="url(#wavyLineGradient)"
+            strokeWidth="2.8"
+            opacity="0.25"
+          />
+        </svg>
+      </div>
 
       {/* ================= CORE CONTENT LAYOUT MATRIX CONTAINER ================= */}
-      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-start gap-10 lg:gap-16 relative z-10">
+      {/* Changed md:items-start to md:items-center to vertically center the left image with the right text */}
+      <div className="max-w-5xl mx-auto flex flex-col md:flex-row items-center md:items-center gap-8 md:gap-10 lg:gap-14 relative z-10">
         
-        {/* Left Side Portrait Block */}
-        <div className="w-full sm:w-80 md:w-[400px] shrink-0 aspect-[4/3] sm:aspect-square rounded-2xl overflow-hidden shadow-sm">
+        {/* Mobile View Header - Only visible on Mobile/Tablet (< md) to stay on top */}
+        <div className="w-full flex items-center gap-4 md:hidden order-1 mb-2">
+          <div className="w-[6px] h-8 bg-gradient-to-b from-[#22a4dd] to-[#4ade80] rounded-full" />
+          <h3 className="text-xl sm:text-2xl font-medium tracking-wider text-gray-700">
+            施工管理責任者メッセージ
+          </h3>
+        </div>
+
+        {/* Left Side Portrait Block - Vertically centered on desktop */}
+        <div className="w-full max-w-[340px] sm:w-80 md:w-80 lg:w-[420px] shrink-0 aspect-square overflow-hidden shadow-sm order-2 md:order-1">
           <img 
             src={managerImage} 
             alt="Construction Management Specialist Portrait" 
@@ -53,12 +61,12 @@ const ManagerMessage = () => {
           />
         </div>
 
-        {/* Right Side Corporate Copy Content */}
-        <div className="flex-1 space-y-6 text-sm sm:text-base text-gray-600 leading-relaxed tracking-wide">
+        {/* Right Side Corporate Copy Content - with renowa-font */}
+        <div className="renowa-font flex-1 space-y-6 text-sm sm:text-base text-gray-600 leading-relaxed tracking-wide order-3 md:order-2">
           
-          {/* Accent Header Line */}
-          <div className="flex items-center gap-3">
-            <div className="w-1 h-7 bg-gradient-to-b from-lime-400 to-emerald-500 rounded-full" />
+          {/* Desktop View Header - Hidden on mobile, beautifully aligned beside image on desktop */}
+          <div className="hidden md:flex items-center gap-4">
+            <div className="w-[6px] h-8 bg-gradient-to-b from-[#22a4dd] to-[#4ade80] rounded-full" />
             <h3 className="text-xl sm:text-2xl font-medium tracking-wider text-gray-700">
               施工管理責任者メッセージ
             </h3>
@@ -73,7 +81,7 @@ const ManagerMessage = () => {
           </p>
 
           <p>
-            工事完了したときの「ありがとう」の言葉は、私たちにとって何よりの励みです。そして、「また仕事を任せたいと思える会社だった」と感じていただけるよう、施工後のアフターフォローまで責任を持って対応いたします。
+            工事完了したときの「ありがとう」の言葉は、私たちにとって何よりの励みです。「また仕事を任せたいと思える会社だった」と感じていただけるよう、施工後のアフターフォローまで責任を持って対応いたします。
           </p>
           
           <p className="font-medium text-gray-700 pt-2">

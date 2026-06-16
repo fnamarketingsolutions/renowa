@@ -17,16 +17,16 @@ const CompanySection = () => {
   return (
     <div id="company" className="w-full bg-[#fcfcfc] font-sans antialiased">
       
-      {/* Hero Header Area with Native Image Tag Layer */}
-      <div className="w-full h-64 sm:h-80 relative flex flex-col items-center justify-center overflow-hidden">
+      {/* Hero Header Area - Height significantly increased further */}
+      <div className="w-full h-[400px] sm:h-[500px] lg:h-[550px] relative flex flex-col items-center justify-center overflow-hidden">
         {/* Native Image Tag with Blend Overlay */}
         <img 
           src={companyImage} 
           alt="Company Profile Office Background" 
-          className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none select-none"
+          className="absolute inset-0 w-full h-full object-cover-contain object-center z-0 pointer-events-none select-none"
         />
-        {/* Semi-transparent white screen layer matching your inline gradient overlay */}
-        <div className="absolute inset-00 z-10" />
+        {/* Semi-transparent white screen layer overlay */}
+        <div className="absolute inset-0 z-10" />
 
         {/* Content Elements on Top of Image Overlay */}
         <div className="relative z-20 w-full text-center">
@@ -59,13 +59,19 @@ const CompanySection = () => {
         </div>
       </div>
 
-      {/* Profile Card Container (Overlaps the image block above) */}
-      <div className="max-w-4xl mx-auto px-4 pb-16 -mt-12 sm:-mt-20 relative z-30">
+      {/* Profile Card Container (Adjusted negative margin to match taller height) */}
+      <div className="max-w-4xl mx-auto px-4 pb-16 -mt-24 sm:-mt-32 relative z-30">
         <div className="bg-white rounded-2xl shadow-xl border border-gray-100 p-6 sm:p-10 lg:p-14">
-          <div className="divide-y divide-gray-100">
+          {/* Main List Shell with renowa-font Typography Mapping */}
+          <div className="renowa-font">
             {details.map((item, index) => (
-              <div key={index} className="py-4 sm:py-6 flex flex-col sm:flex-row items-start text-sm">
-                <span className="w-full sm:w-1/4 font-medium text-gray-500 tracking-wide mb-1 sm:mb-0 shrink-0">
+              <div 
+                key={index} 
+                className={`py-5 sm:py-6 flex flex-col sm:flex-row items-start text-sm ${
+                  index !== details.length - 1 ? 'border-b border-dashed border-black/80' : ''
+                }`}
+              >
+                <span className="w-full sm:w-1/4 font-medium text-gray-500 tracking-wide mb-1.5 sm:mb-0 shrink-0">
                   {item.label}
                 </span>
                 <span className="w-full sm:w-3/4 text-gray-700 whitespace-pre-line leading-relaxed tracking-wide">
@@ -81,4 +87,4 @@ const CompanySection = () => {
   );
 };
 
-export default CompanySection;
+export default CompanySection;  

@@ -1,9 +1,20 @@
 import React, { useState } from 'react';
 import { Mail, Phone, Menu, X } from 'lucide-react';
+// IMPORT BOTH OF YOUR LOGOS HERE
+import desktopLogo from '../assets/homePage/renowa-logo1.png';
+import mobileLogo from '../assets/homePage/renowa-logo.png'; // Path to your mobile logo
 
 export default function Navbar() {
   // Mobile Dropdown Animation Expansion Menu State Tracker
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navLinks = [
+    { en: "TOP", jp: "トップ" },
+    { en: "ABOUT US", jp: "私たち" },
+    { en: "SERVICE", jp: "サービス例" },
+    { en: "WORKS", jp: "施工実績" },
+    { en: "COMPANY", jp: "会社概要" }
+  ];
 
   // Smooth scroll handler targeting matching lowercase IDs
   const handleScrollToSection = (sectionId) => {
@@ -27,34 +38,47 @@ export default function Navbar() {
           className="flex items-center gap-2 shrink-0 cursor-pointer"
         >
           <div className="flex flex-col items-center justify-center">
-            <svg className="w-9 h-9 text-emerald-500" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 28V18C12 14.6863 14.6863 12 18 12H28V28" stroke="#A3E635" strokeWidth="2.5" strokeLinecap="round"/>
-              <path d="M8 32V22C8 16.4772 12.4772 12 18 12H32V32" stroke="#0284C7" strokeWidth="2.5" strokeLinecap="round"/>
-            </svg>
+            {/* DESKTOP LOGO: Visible only from 1024px (lg) and up */}
+            <img 
+              src={desktopLogo} 
+              alt="Renowa Corporate Desktop Logo" 
+              className="w-30 h-18 hidden lg:block select-none" 
+            />
+
+            {/* MOBILE LOGO: Enforced with exact height and width variables matching your setup */}
+            <img 
+              src={mobileLogo} 
+              alt="Renowa Corporate Mobile Logo" 
+              className="h-8 w-35 block lg:hidden select-none object-contain" 
+            />
           </div>
-          <div className="flex flex-col">
-            <span className="text-xl font-bold tracking-widest text-slate-700 leading-none">RENOWA</span>
-          </div>
+        
         </div>
 
         {/* DESKTOP LINKS (Hidden below 1024px) */}
-        <div className="hidden lg:flex items-center gap-8">
-          <div className="flex items-center gap-6 text-center">
-            {[
-              { en: "TOP", jp: "トップ" },
-              { en: "ABOUT US", jp: "私たち" },
-              { en: "SERVICE", jp: "サービス例" },
-              { en: "WORKS", jp: "施工実績" },
-              { en: "COMPANY", jp: "会社概要" }
-            ].map((link, idx) => (
-              <button 
-                key={idx} 
-                onClick={() => handleScrollToSection(link.en)}
-                className="group flex flex-col items-center justify-center min-w-[70px] focus:outline-none cursor-pointer"
-              >
-                <span className="text-[10px] text-slate-400 font-bold tracking-tight transform scale-90 group-hover:text-sky-500 transition-colors">{link.en}</span>
-                <span className="text-xs text-slate-700 font-bold tracking-wider mt-0.5 group-hover:text-sky-500 transition-colors">{link.jp}</span>
-              </button>
+        <div className="hidden lg:flex items-center gap-6">
+          <div className="flex items-center text-center">
+            {navLinks.map((link, idx) => (
+              <React.Fragment key={idx}>
+                <button 
+                  onClick={() => handleScrollToSection(link.en)}
+                  className="group flex flex-col items-center justify-center min-w-[85px] px-5 focus:outline-none cursor-pointer"
+                >
+                  {/* English sub-label */}
+                  <span className="text-lg text-gray-600 tracking-tight transform scale-90 group-hover:text-black transition-colors">
+                    {link.en}
+                  </span>
+                  {/* Main label set to text-gray-500 with a text-sm sizing profile */}
+                  <span className="text-sm text-gray-400 font-bold mt-0.5 group-hover:text-black transition-colors">
+                    {link.jp}
+                  </span>
+                </button>
+
+                {/* Vertical Divider Line System: Updated to solid black background */}
+                {idx !== navLinks.length - 1 && (
+                  <div className="h-10 w-[0.1px] bg-black self-center opacity-80" />
+                )}
+              </React.Fragment>
             ))}
           </div>
 
@@ -81,10 +105,23 @@ export default function Navbar() {
         <div className="lg:hidden flex items-center">
           <button 
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="p-2 rounded-md text-slate-600 hover:bg-slate-50 focus:outline-none transition-colors z-50 relative"
+            className="p-2 rounded-md text-slate-500 hover:bg-slate-50 focus:outline-none transition-colors z-50 relative w-10 h-10 flex items-center justify-center"
             aria-label="Toggle Menu"
           >
-            {isMenuOpen ? <X className="w-6 h-6 text-slate-500" /> : <Menu className="w-6 h-6" />}
+            {isMenuOpen ? (
+              /* Thin Close X Layout built using CSS transitions */
+              <div className="w-6 h-6 relative flex items-center justify-center">
+                <span className="absolute w-6 h-[1.5px] bg-current rotate-45 rounded-sm" />
+                <span className="absolute w-6 h-[1.5px] bg-current -rotate-45 rounded-sm" />
+              </div>
+            ) : (
+              /* Thin Hamburger Menu Lines Layout built using spacing */
+              <div className="w-6 h-4 relative flex flex-col justify-between items-center">
+                <span className="w-6 h-[1.5px] bg-current rounded-sm" />
+                <span className="w-6 h-[1.5px] bg-current rounded-sm" />
+                <span className="w-6 h-[1.5px] bg-current rounded-sm" />
+              </div>
+            )}
           </button>
         </div>
       </div>
@@ -95,40 +132,34 @@ export default function Navbar() {
           
           {/* Top Logo Watermark Row */}
           <div className="w-full flex justify-start pl-2">
-            <div className="flex items-center gap-1.5 opacity-30 scale-90 origin-left">
-              <svg className="w-5 h-5" viewBox="0 0 40 40" fill="none">
-                <path d="M12 28V18C12 14.6863 14.6863 12 18 12H28V28" stroke="#A3E635" strokeWidth="2.5"/>
-                <path d="M8 32V22C8 16.4772 12.4772 12 18 12H32V32" stroke="#0284C7" strokeWidth="2.5"/>
-              </svg>
-              <span className="text-xs font-bold tracking-widest text-slate-700">RENOWA</span>
+            <div className="flex items-center gap-1.5 opacity-30 origin-left">
+              <img 
+                src={mobileLogo} 
+                alt="Watermark Logo" 
+                className="h-8 w-35 object-contain select-none"
+              />
             </div>
           </div>
 
-          {/* Core Central Identity Header - Compact Spacing */}
+          {/* Core Central Identity Header */}
           <div className="flex flex-col items-center my-1 animate-in zoom-in-95 duration-200">
-            <svg className="w-14 h-14 text-emerald-500 mb-1" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M12 28V18C12 14.6863 14.6863 12 18 12H28V28" stroke="#A3E635" strokeWidth="3" strokeLinecap="round"/>
-              <path d="M8 32V22C8 16.4772 12.4772 12 18 12H32V32" stroke="#0284C7" strokeWidth="3" strokeLinecap="round"/>
-            </svg>
-            <span className="text-xl font-bold tracking-[0.2em] text-slate-600 pl-1">RENOWA</span>
+            <img 
+              src={mobileLogo} 
+              alt="Renowa Central Brand Mark" 
+              className="h-8 w-35 object-contain mb-2 select-none"
+            />
           </div>
 
-          {/* Full-Width Navigation Link Matrix (Spans completely with tight borders) */}
+          {/* Full-Width Navigation Link Matrix */}
           <div className="w-full max-w-sm flex flex-col items-center justify-center flex-1 my-2">
-            {[
-              { en: "TOP", jp: "トップ" },
-              { en: "ABOUT US", jp: "私たち" },
-              { en: "SERVICE", jp: "サービス例" },
-              { en: "WORKS", jp: "施工実績" },
-              { en: "COMPANY", jp: "会社概要" }
-            ].map((link, idx) => (
+            {navLinks.map((link, idx) => (
               <button 
                 key={idx} 
                 onClick={() => handleScrollToSection(link.en)}
                 className="w-full py-3 sm:py-4 flex flex-col items-center justify-center text-center cursor-pointer border-b border-slate-200/70 last:border-0 active:bg-slate-100/40 transition-colors"
               >
-                <span className="text-[9px] text-slate-400 font-bold tracking-widest uppercase">{link.en}</span>
-                <span className="text-[16px] text-slate-700 font-semibold tracking-wider mt-0.5">{link.jp}</span>
+                <span className="text-md text-slate-600 font-semibold tracking-widest uppercase">{link.en}</span>
+                <span className="text-md text-slate-400 font-semibold tracking-wider mt-0.5">{link.jp}</span>
               </button>
             ))}
           </div>

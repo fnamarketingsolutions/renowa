@@ -16,7 +16,7 @@ export default function HeroSection() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="pt-10 w-full pb-12 sm:pb-16 md:pb-20 overflow-hidden relative"
+        className=" pt-10 w-full pb-12 sm:pb-16 md:pb-20 overflow-hidden relative"
       >
         {/* BACKGROUND MATTE SIDE STRIP GRID PANEL LAYOUT */}
         <motion.div layout className="w-full max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 relative items-stretch">
@@ -54,26 +54,28 @@ export default function HeroSection() {
           </motion.div>
 
           {/* FLOATING TEXT PLATFORM PANEL - OVERLAYS BOTTOM LEFT STABLY */}
+          {/* Mobile optimization: Reduced width to max-w-[80%] or w-fit to tightly embrace the content */}
           <motion.div 
             initial={{ opacity: 0, y: 60 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-            className="absolute bottom-6 left-4 sm:bottom-12 sm:left-8 lg:bottom-20 lg:left-[12%] z-30 w-[calc(100%-2rem)] sm:w-[540px] md:w-[620px] lg:w-[680px]"
+            className="absolute bottom-6 left-0 sm:bottom-12 sm:left-0 lg:bottom-20 lg:left-[7%] z-30 w-fit max-w-[85%] sm:w-[400px] md:w-[620px] lg:w-[680px]"
           >
             {/* MAIN SOLID/MATTE TRANSLUCENT GLASS TEXT CARD */}
+            {/* Mobile optimization: tight horizontal padding (px-3) to make the overall width as small as possible */}
             <motion.div 
-              className="bg-white/95 backdrop-blur-md px-6 py-6 sm:px-12 sm:py-10 rounded-tr-[32px] rounded-bl-[32px] rounded-tl-[4px] rounded-br-[4px] shadow-xl border border-white/60 pt-9 sm:pt-12"
+              className="bg-white/60 px-3 py-4 sm:px-12 sm:py-6 rounded-r-[16px] sm:rounded-[20px] shadow-xl border border-white/60 pt-6 sm:pt-12"
             >
-              <motion.div className="space-y-4 sm:space-y-6">
+              <motion.div className="space-y-2 sm:space-y-6">
                 
                 {/* Line 1 Heading Node */}
                 <motion.div 
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ duration: 0.5, delay: 0.5 }}
-                  className="relative inline-block"
+                  className="relative inline-block block"
                 >
-                  <motion.h2 className="text-2xl sm:text-4xl md:text-[42px] font-black tracking-wider text-slate-800 leading-tight">
+                  <motion.h2 className="renowa-font text-lg sm:text-4xl md:text-[42px] font-black tracking-wider text-slate-800 leading-tight whitespace-nowrap">
                     “リノ”ベーションで、
                   </motion.h2>
                   
@@ -82,7 +84,7 @@ export default function HeroSection() {
                     initial={{ width: 0 }}
                     animate={{ width: "100%" }}
                     transition={{ duration: 0.75, delay: 0.85, ease: "easeInOut" }}
-                    className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-sky-400 via-emerald-400 to-amber-300 rounded-full" 
+                    className="absolute -bottom-1 left-0 h-[2px] sm:h-1 bg-gradient-to-r from-sky-400 via-emerald-400 to-amber-300 rounded-full" 
                   />
                 </motion.div>
 
@@ -93,7 +95,7 @@ export default function HeroSection() {
                   transition={{ duration: 0.5, delay: 0.7 }}
                   className="relative inline-block block"
                 >
-                  <motion.h2 className="text-2xl sm:text-4xl md:text-[42px] font-black tracking-wider text-slate-800 leading-tight">
+                  <motion.h2 className="renowa-font text-lg sm:text-4xl md:text-[42px] font-black tracking-wider text-slate-800 leading-tight whitespace-nowrap">
                     人の“ワ”を。
                   </motion.h2>
                   
@@ -102,7 +104,7 @@ export default function HeroSection() {
                     initial={{ width: 0 }}
                     animate={{ width: "85%" }}
                     transition={{ duration: 0.75, delay: 1.1, ease: "easeInOut" }}
-                    className="absolute -bottom-1 left-0 h-1 bg-gradient-to-r from-sky-400 via-emerald-400 to-transparent rounded-full" 
+                    className="absolute -bottom-1 left-0 h-[2px] sm:h-1 bg-gradient-to-r from-sky-400 via-emerald-400 to-transparent rounded-full" 
                   />
                 </motion.div>
 

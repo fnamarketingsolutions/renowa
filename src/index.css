@@ -1,1 +1,6 @@
 @import "tailwindcss";
+
+.renowa-font{
+    font-family: "Noto Sans JP", "Yu Gothic Medium", "Yu Gothic", "Hiragino Kaku Gothic ProN", sans-serif;
+    color: #68737A;
+}

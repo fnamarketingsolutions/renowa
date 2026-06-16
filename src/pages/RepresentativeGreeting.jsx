@@ -10,7 +10,7 @@ const RepresentativeGreeting = () => {
       id="representative-greeting" 
       className="w-full bg-[#fcfcfc] text-[#333333] font-sans antialiased py-12 px-4 lg:px-0 relative overflow-hidden select-none"
     >
-      <div className="w-full max-w-2xl lg:max-w-7xl mx-auto relative lg:min-h-[700px] flex flex-col items-center">
+      <div className="w-full max-w-2xl lg:max-w-7xl mx-auto relative lg:min-h-[750px] flex flex-col items-center">
         
         {/* ================= HEADER SECTION ================= */}
         <div className="text-center z-30 mb-12 lg:mb-8 mt-2">
@@ -89,16 +89,17 @@ const RepresentativeGreeting = () => {
           </div>
         </div>
 
-        {/* Vertical Text Grid for Desktop */}
+        {/* Vertical Text Grid for Desktop - PERFECTLY CENTERED */}
         <div 
-          className="hidden lg:flex z-10 h-[360px] justify-between max-w-xl mx-auto mt-2 px-4"
+          className="hidden lg:flex z-10 h-[440px] max-w-3xl mx-auto mt-4 px-4 justify-center"
           style={{
             writingMode: 'vertical-rl',
             WebkitWritingMode: 'vertical-rl',
             msWritingMode: 'tb-rl'
           }}
         >
-          <div className="text-[15px] leading-[2.7] text-[#4a4a4a] tracking-[0.15em] font-serif pl-16">
+          {/* Main Body Text Container */}
+          <div className="renowa-font text-[18px] leading-[2.7] text-[#4a4a4a] tracking-[0.15em] font-serif pl-16">
             <p className="mb-0">
               弊社は、住まいに関する工事を単なる「施工」ではなく、お客様の暮らしをより良くするための大切な「仕事」だと考えています。だからこそ、一件一件のご依頼に真摯に向き合い、お客様との信頼関係を何より大切にしてまいりました。
             </p>
@@ -110,6 +111,7 @@ const RepresentativeGreeting = () => {
             </p>
           </div>
 
+          {/* Signature Block */}
           <div className="flex flex-col justify-end items-start h-full pb-2 pr-2 font-serif">
             <span className="text-[11px] text-gray-400 tracking-[0.2em] mb-4">代表取締役</span>
             <span className="text-lg font-medium tracking-[0.25em] text-[#333333]">長田知也</span>
