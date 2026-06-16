@@ -18,12 +18,12 @@ const CompanySection = () => {
     <div id="company" className="w-full bg-[#fcfcfc] font-sans antialiased">
       
       {/* Hero Header Area - Height significantly increased further */}
-      <div className="w-full h-[400px] sm:h-[500px] lg:h-[550px] relative flex flex-col items-center justify-center overflow-hidden">
+      <div className="w-full h-[400px] sm:h-[500px] lg:h-[600px] relative flex flex-col items-center justify-center overflow-hidden">
         {/* Native Image Tag with Blend Overlay */}
         <img 
           src={companyImage} 
           alt="Company Profile Office Background" 
-          className="absolute inset-0 w-full h-full object-cover-contain object-center z-0 pointer-events-none select-none"
+          className="absolute inset-0 w-full h-full object-cover object-center z-0 pointer-events-none select-none"
         />
         {/* Semi-transparent white screen layer overlay */}
         <div className="absolute inset-0 z-10" />

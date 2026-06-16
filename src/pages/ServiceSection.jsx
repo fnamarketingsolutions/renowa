@@ -63,7 +63,7 @@ export default function ServiceVoiceWorks() {
             </text>
           </svg>
         </h2> 
-        <p className="text-sm tracking-wider text-gray-500 mt-1 mb-12">サービス例</p>
+        <p className="text-lg font-semibold tracking-wider text-gray-500 mb-12">サービス例</p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-x-6 gap-y-12 max-w-4xl mx-auto">
           {services.map((item) => (
@@ -79,7 +79,7 @@ export default function ServiceVoiceWorks() {
                 <span className="w-7 h-7 rounded-full bg-gradient-to-br from-[#81C6E0] to-[#C3D605] opacity-40 shrink-0 -mr-3.5 z-0" />
                 
                 {/* Text is placed relatively higher in z-index to stay beautifully visible */}
-                <p className="text-sm font-semibold tracking-wide text-gray-700 z-10 relative">
+                <p className="text-sm font-semibold tracking-wide text-gray-500 z-10 relative">
                   {item.title}
                 </p>
               </div>
@@ -87,7 +87,7 @@ export default function ServiceVoiceWorks() {
           ))}
         </div>
         
-        <p className="text-xs sm:text-sm text-gray-500 mt-12 tracking-wide">
+        <p className="text-sm sm:text-sm text-gray-450 mt-12 tracking-widest">
           その他、住まいのお困りごとがあればお気軽にご相談ください！
         </p>
       </section>
