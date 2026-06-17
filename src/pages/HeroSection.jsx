@@ -12,12 +12,12 @@ import heroImage1 from "../assets/homePage/hero-section-image.jpg";
 import heroImage2 from "../assets/homePage/hero-image2.jpg";
 import heroImage3 from "../assets/homePage/hero-image3.jpg";
 
-// Mobile View Images (Point these to your separate mobile asset files)
-import heroMobile2 from "../assets/homePage/hero-image2-mobile.png"; // Replace with your mobile asset 1
-import heroMobile3 from "../assets/homePage/hero-image3-mobile.png";         // Replace with your mobile asset 2
+// Mobile View Images
+import heroMobile2 from "../assets/homePage/hero-image2-mobile.png";
+import heroMobile3 from "../assets/homePage/hero-image3-mobile.png";
 
 export default function HeroSection() {
-  // UNIFIED CAROUSEL DATA MATRIX ARRAY (Holds synchronized distinct images and custom copy)
+  // UNIFIED CAROUSEL DATA MATRIX ARRAY
   const carouselData = [
     {
       desktopImage: heroImage1,
@@ -65,24 +65,19 @@ export default function HeroSection() {
         className="pt-10 w-full pb-12 sm:pb-16 md:pb-20 overflow-hidden relative"
       >
         {/* BACKGROUND MATTE SIDE STRIP GRID PANEL LAYOUT */}
-        <motion.div layout className="w-full max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 relative items-stretch">
+        <div className="w-full max-w-[1920px] mx-auto grid grid-cols-1 lg:grid-cols-12 relative items-stretch">
           
-          {/* LEFT COLUMN COMPONENT: COVERS THE LEFT L-SHAPE SPACE WITH PURE LIGHT BLUE */}
-          <motion.div 
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.75, ease: "easeOut" }}
-            className="hidden lg:block lg:col-span-3 bg-transparent relative"
-          />
+          {/* LEFT COLUMN COMPONENT */}
+          <div className="hidden lg:block lg:col-span-3 bg-transparent relative" />
 
-          {/* RIGHT COLUMN IMAGE WRAPPER: CAROUSEL CORE IMAGE LAYER */}
+          {/* RIGHT COLUMN IMAGE WRAPPER - SLIDES UP FROM THE BOTTOM ON MOUNT */}
           <motion.div 
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 120 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ease: [0.25, 1, 0.5, 1] }}
+            transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
             className="col-span-1 lg:col-span-9 px-0 sm:px-6 lg:px-0 lg:pl-4 relative flex items-center justify-end"
           >
-            <motion.div 
+            <div 
               className="w-full lg:w-[100%] bg-white rounded-tl-[40px] sm:rounded-tl-[80px] rounded-bl-[4px] lg:rounded-bl-[80px] rounded-tr-[4px] rounded-br-[4px] shadow-sm overflow-hidden border border-slate-100/40 relative h-[450px] sm:min-h-[480px] md:min-h-[560px] lg:min-h-[640px] flex items-end"
             >
               {/* IMAGE PORTAL FOR MOBILE VIEWPOINTS */}
@@ -117,22 +112,22 @@ export default function HeroSection() {
                 </AnimatePresence>
               </div>
 
-              <motion.div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
-            </motion.div>
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/20 via-transparent to-transparent pointer-events-none" />
+            </div>
           </motion.div>
 
-          {/* FLOATING TEXT PLATFORM PANEL - OVERLAYS BOTTOM LEFT STABLY */}
+          {/* FLOATING TEXT PLATFORM PANEL - SLIDES IN FROM THE LEFT ON MOUNT */}
           <motion.div 
-            initial={{ opacity: 0, y: 60 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
+            initial={{ opacity: 0, x: -100 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1.2, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
             className="absolute bottom-6 left-0 sm:bottom-12 sm:left-0 lg:bottom-20 lg:left-[7%] z-30 w-fit max-w-[85%] sm:w-[400px] md:w-[620px] lg:w-[680px]"
           >
-            {/* MAIN SOLID/MATTE TRANSLUCENT GLASS TEXT CARD */}
-            <motion.div 
+            {/* MAIN TEXT CARD */}
+            <div 
               className="bg-white/60 px-3 py-4 sm:px-12 sm:py-6 rounded-r-[16px] sm:rounded-[20px] shadow-xl border border-white/60 pt-6 sm:pt-12 relative"
             >
-              {/* Animated Text Node Layout Wrappers synced with CurrentIndex state shifts */}
+              {/* Text Transitions On Slide Change */}
               <AnimatePresence mode="wait">
                 <motion.div 
                   key={currentIndex}
@@ -196,10 +191,10 @@ export default function HeroSection() {
                 ))}
               </div>
 
-            </motion.div>
+            </div>
           </motion.div>
 
-        </motion.div>
+        </div>
       </motion.section>
       
       <AboutUs/>
