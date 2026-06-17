@@ -144,7 +144,7 @@ export default function ServiceVoiceWorks() {
       <div className="flex-1 text-sm sm:text-base md:text-sm lg:text-base leading-relaxed text-gray-600 space-y-4 pt-2">
         <p>
           リノワさんには、蛇口の付け替えのような軽微なことから施設全体の給湯器の入れ替えまで、幅広い工事をお願いしています。
-        </p>
+        </p>  
         <p>
           小さな仕事でも誠実に向き合ってくれるところや、何か困ったことがあれば必ず解決方法を提示してくれるので、弊施設にはなくてはならない存在です。
         </p>
