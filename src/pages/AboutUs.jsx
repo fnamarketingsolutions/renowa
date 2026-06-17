@@ -23,7 +23,7 @@ const AboutUs = () => {
 
   return (
     /* MAIN WRAPPER: Spans full edge-to-edge layout width. Background color and blur apply ONLY on mobile viewports */
-    <div className='w-full min-h-screen flex items-center justify-center max-sm:bg-white/50 max-sm:backdrop-blur-[2px] py-12 md:py-0 relative overflow-hidden'>
+    <div className='w-full min-h-screen flex items-center justify-center max-sm:bg-white/50 max-sm:backdrop-blur-[2px] lg:py-12 md:py-0 relative overflow-hidden'>
       
       {/* DECORATIVE LINING BACKGROUND LAYER - GENUINE EDGE-TO-EDGE WINDOW COVERAGE */}
       <div className="absolute inset-0 w-full h-full pointer-events-none z-0">

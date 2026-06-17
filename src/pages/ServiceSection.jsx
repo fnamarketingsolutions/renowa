@@ -39,7 +39,7 @@ export default function ServiceVoiceWorks() {
     <div id="service" className="w-full text-[#333333] font-sans antialiased">
       
       {/* ================= SERVICE SECTION ================= */}
-      <section className="max-w-5xl mx-auto px-4 py-16 text-center">
+      <section className="max-w-5xl mx-auto px-4 lg:py-16 sm:py-1 text-center">
         <h2 className="w-full max-w-5xl mx-auto mt-4">
           <svg viewBox="0 0 1000 130" className="w-full h-auto font-sans font-extrabold tracking-[0.22em]">
             <defs>
@@ -120,7 +120,7 @@ export default function ServiceVoiceWorks() {
       </svg>
     </h2>
     
-    <p className="text-2xl tracking-wider font-bold text-gray-500 mb-10">お客様の声</p>
+    <p className="text-[14px] tracking-wider font-bold text-gray-500 mb-10">お客様の声</p>
 
     {/* Updated Layout: Width matches exactly 80% on desktop layout matrices and internal vertical spacing (py-12 md:py-16) expanded safely */}
     <div className="w-full max-w-[92%] lg:max-w-[80%] bg-white rounded-2xl p-6 sm:p-10 py-12 md:py-16 shadow-sm flex flex-col md:flex-row gap-8 lg:gap-12 items-center md:items-start text-left mx-auto">
